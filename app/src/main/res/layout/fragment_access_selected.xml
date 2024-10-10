@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AccessSelectedFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:fontFamily="@font/baloo"
+        android:text="Escolas"
+        android:textSize="16sp"
+        android:textColor="@color/black_green"
+        android:textStyle="bold"
+        android:gravity="center|start"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_green"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+    >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/accessLeonardoMorning"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/leonardo_nunes_manh"
+            android:gravity="center"
+            android:checkable="true"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/access_leonardo_afternoon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/leonardo_nunes_tarde"
+            android:gravity="center"
+            android:checkable="true"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/access_bernal_afternoon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/bernal_manh"
+            android:gravity="center"
+            android:checkable="true"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/access_bernal_morning"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/bernal_tarde"
+            android:gravity="center"
+            android:checkable="true"
+            />
+    </com.google.android.material.chip.ChipGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"/>
+
+
+    <TextView
+            android:id="@+id/tvTitleControlSchool"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/baloo"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Controle acesso"
+            android:textColor="@color/black_green"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+    <View
+        android:id="@+id/viewLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_green"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/grupo_chip_selected_control"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/chipIsBlocked"
+            android:text="@string/bloqueado"
+            android:textSize="20sp"
+            android:checkable="true"
+            android:textStyle="bold"
+            android:checked="true"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/chipUserIsUser"
+            android:text="@string/usu_rio"
+            android:checkable="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+
+
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/chipUserTeacher"
+        android:text="@string/professor"
+        android:textSize="20sp"
+        android:checkable="true"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/chipUserCoordinator"
+            android:text="@string/coordinator"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:checkable="true"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/editar_controle"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

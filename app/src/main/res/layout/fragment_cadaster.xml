@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_green">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/send_message"
+        android:backgroundTint="@color/light_gray"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="-5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/cadaster"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtCadasterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/hint_add_email"
+        android:textColorHint="@color/medium_gray"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/background_response"
+        android:backgroundTint="@color/black_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <EditText
+        android:id="@+id/edtCadasterPassword"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_response"
+        android:backgroundTint="@color/black_green"
+        android:textColorHint="@color/medium_gray"
+        android:ems="10"
+        android:autofillHints="password"
+        android:hint="@string/adicionar_senha"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edtCadasterEmail"
+        app:layout_constraintStart_toStartOf="@+id/edtCadasterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtCadasterEmail" />
+
+
+
+
+    <EditText
+        android:id="@+id/edtCadasterName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:autofillHints="name"
+        android:background="@drawable/background_response"
+        android:backgroundTint="@color/black_green"
+        android:ems="10"
+        android:textColorHint="@color/medium_gray"
+        android:hint="@string/first_name"
+        android:inputType="text"
+        android:layout_marginTop="25dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@id/edtCadasterPassword"
+        app:layout_constraintStart_toStartOf="@+id/edtCadasterPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtCadasterPassword"
+        />
+
+    <EditText
+        android:id="@+id/edtCadasterLastName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:autofillHints="password"
+        android:background="@drawable/background_response"
+        android:backgroundTint="@color/black_green"
+        android:ems="10"
+        android:textColorHint="@color/medium_gray"
+        android:hint="@string/lastName"
+        android:inputType="text"
+        android:layout_marginTop="25dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@id/edtCadasterName"
+        app:layout_constraintStart_toStartOf="@+id/edtCadasterName"
+        app:layout_constraintTop_toBottomOf="@+id/edtCadasterName"
+        />
+
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/background_response"
+        android:backgroundTint="@color/black_green"
+        android:ems="10"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/medium_gray"
+        android:hint="@string/adicione_telefones"
+        app:layout_constraintBottom_toTopOf="@+id/btnSendCadaster"
+        app:layout_constraintEnd_toEndOf="@id/edtCadasterLastName"
+        app:layout_constraintStart_toStartOf="@+id/edtCadasterLastName"
+        app:layout_constraintTop_toBottomOf="@+id/edtCadasterLastName" />
+
+
+    <Button
+        android:id="@+id/btnSendCadaster"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black_green"
+        android:text="Cadastrar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/view2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

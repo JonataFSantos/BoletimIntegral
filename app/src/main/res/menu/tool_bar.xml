@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/exit"
+        android:title="@string/sair_do_app"
+        android:icon="@drawable/baseline_exit_to_app_24"
+        android:visible="true"
+        android:contentDescription="@string/exit_to_app"
+        android:titleCondensed="sair"
+        app:showAsAction="ifRoom"
+        tools:ignore="AlwaysShowAction" />
+
+
+
+
+
+</menu>

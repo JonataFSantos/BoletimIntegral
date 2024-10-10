@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "844043606600",
+    "project_id": "avisos-f8311",
+    "storage_bucket": "avisos-f8311.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844043606600:android:71e550bb0baea2aabad67d",
+        "android_client_info": {
+          "package_name": "com.example.boletimintegral"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIraoO6Lfq7eCR-_mi4Cuou6HOvawmm6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

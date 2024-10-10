@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Verde Principal -->
+    <color name="primary_green">#239B56</color>
+
+    <!-- Verde Claro (usado em detalhes e gradientes) -->
+    <color name="light_green">#58D68D</color>
+
+
+    <!-- Cor para ser usada como hint (usado em detalhes e gradientes) -->
+    <color name="color_hint">#B2FFFFFF</color>
+
+
+    <!-- Verde escuro (fundo escuro) -->
+    <color name="black_green">#2C3B42</color>
+
+    <color name="black_red">#6e3627</color>
+
+    <!-- B Hiper Claro (usado em detalhes e gradientes) -->
+    <color name="hiper_light_green">#A9DFBF</color>
+
+    <!-- Branco (para contraste e textos em fundos verdes) -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- Cinza Claro (usado em fundos e divisores) -->
+    <color name="background_green">#F8FFF8</color>
+
+    <!-- Cinza Claro (usado em fundos e divisores) -->
+    <color name="light_gray">#F0F0F0</color>
+
+    <!-- Cinza Médio (usado em textos secundários) -->
+    <color name="medium_gray">#B0B0B0</color>
+
+    <!-- Cinza Escuro (para botões e textos destacados) -->
+    <color name="dark_gray">#3C3C3C</color>
+
+    <!-- Preto (usado para textos e ícones importantes) -->
+    <color name="black">#000000</color>
+
+
+    <!-- Verde (para botoes) -->
+    <color name="green">#6ed9a1</color>
+
+    <!-- Vermelho (para erros ou transações falhas) -->
+    <color name="redBackground">#ffd7cd</color>
+
+    <color name="yelowBackground">#ffebcd</color>
+    <color name="yelowBlack">#6e6527</color>
+
+    <color name="blueBackground">#cde4ff</color>
+    <color name="blueBlack">#27426e</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

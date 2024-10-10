@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_add_message"
+        android:backgroundTint="@color/light_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/edtTitleMessage"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/add_mensage_borda"
+        android:backgroundTint="@color/black_green"
+        android:ems="10"
+        android:hint="@string/assunto_da_mensagem"
+        android:inputType="text"
+        android:maxEms="42"
+        android:maxLines="3"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:singleLine="false"
+        android:textColorHint="@color/black_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtMessageDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/add_mensage_borda"
+        android:backgroundTint="@color/black_green"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/escreva_a_mensagem"
+        android:imeOptions="actionNone"
+        android:inputType="textMultiLine"
+        android:maxEms="1000"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:singleLine="false"
+        android:textColorHint="@color/black_green"
+        app:layout_constraintBottom_toTopOf="@+id/groupChip"
+        app:layout_constraintEnd_toEndOf="@+id/edtTitleMessage"
+        app:layout_constraintStart_toStartOf="@+id/edtTitleMessage"
+        app:layout_constraintTop_toBottomOf="@+id/edtTitleMessage" />
+
+
+    <ImageButton
+        android:id="@+id/imgButtomSend"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_circle"
+        android:backgroundTint="@color/black_green"
+        android:contentDescription="@string/name"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundView"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundView"
+        app:layout_constraintVertical_bias="0.74"
+        app:srcCompat="@drawable/baseline_send_24"
+        app:tint="@color/white" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/groupChip"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:foregroundGravity="right"
+        app:layout_constraintBottom_toTopOf="@id/imgButtomSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipLeonardoMorning"
+            android:text="@string/leonardo_manh"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:gravity="center"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipLeonardoAfternoon"
+            android:text="@string/leonardo_tarde"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:gravity="center"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBernalMorning"
+            android:text="@string/bernal_manh"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:checkable="true"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBernalAfternoon"
+            android:text="@string/bernal_tarde"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:checkable="true"
+            />
+    </com.google.android.material.chip.ChipGroup>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

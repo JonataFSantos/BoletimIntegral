@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/userScreenFragment"
+        android:icon="@drawable/baseline_person_24_green"
+        android:title="person"
+        android:contentDescription="@string/data_person"
+        app:showAsAction="ifRoom"
+
+        />
+
+
+
+    <item
+        android:id="@+id/messageFragment"
+        android:icon="@drawable/baseline_message_24"
+        android:title="message"
+        android:contentDescription="@string/data_person"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/accessFragment"
+        android:title="@string/editar_perfil"
+        android:titleCondensed="Perfil"
+        android:icon="@drawable/baseline_mode_edit_outline_24"
+        android:contentDescription="@string/editar_informa_es_do_perfil"
+        android:visible="false"
+        app:showAsAction="never"
+        />
+
+</menu>
