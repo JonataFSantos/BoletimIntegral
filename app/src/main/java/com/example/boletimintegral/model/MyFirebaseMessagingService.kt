@@ -52,7 +52,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
                 .setSmallIcon(R.drawable.baseline_message_24)
                 .setContentTitle(message.title)
                 .setContentText(message.body)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
