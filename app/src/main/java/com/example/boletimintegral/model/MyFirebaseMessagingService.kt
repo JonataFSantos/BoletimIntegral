@@ -12,7 +12,10 @@ import com.google.firebase.messaging.RemoteMessage
 
 class MyFirebaseMessagingService : FirebaseMessagingService( ){
 
-    class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+    }
 
         override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
@@ -39,6 +42,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
         private fun sendNotification(message : RemoteMessage.Notification) {
             // Código para gerar notificações
 
+            val notificationManager : NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as
+                        NotificationManager
 
             var builder = NotificationCompat.Builder(this, "CHANNEL_ID")
                 .setSmallIcon(R.drawable.baseline_message_24)
@@ -55,18 +61,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
                 )
 
 
-                val notificationManager : NotificationManager =
-                    getSystemService(Context.NOTIFICATION_SERVICE) as
-                            NotificationManager
-
 
 
                 notificationManager.createNotificationChannel(channel)
-
-
-
-
             }
+
+            notificationManager.notify(0, builder.build())
 
 
 
@@ -78,4 +78,3 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
     }
 
 
-}
