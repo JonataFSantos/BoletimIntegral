@@ -13,6 +13,8 @@ import com.google.firebase.messaging.RemoteMessage
 class MyFirebaseMessagingService : FirebaseMessagingService( ){
 
 
+
+
     override fun onNewToken(token: String) {
         super.onNewToken(token)
     }
@@ -31,7 +33,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
 
             // Verifica se a mensagem contém um payload de notificação
             remoteMessage.notification?.let {
-                Log.d(TAG, "Message Notification Body: ${it.body}")
+                Log.d("oitubelegal", "Message passou Body: ${it.body}")
             }
 
             // Aqui você pode gerar suas próprias notificações, se necessário
