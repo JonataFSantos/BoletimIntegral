@@ -1,6 +1,12 @@
 package com.example.boletimintegral.model
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.core.app.NotificationCompat
+import com.example.boletimintegral.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -17,12 +23,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
             if (remoteMessage.data.isNotEmpty()) {
                 Log.d(TAG, "Message data payload: ${remoteMessage.data}")
 
-                // Se a tarefa for de longa duração, use o WorkManager
-                if (true) {  // Adapte essa condição conforme necessário
-                    scheduleJob()  // Implementar função para tarefas longas
-                } else {
-                    handleNow()  // Processa a mensagem em menos de 10 segundos
-                }
+
             }
 
             // Verifica se a mensagem contém um payload de notificação
@@ -31,19 +32,44 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
             }
 
             // Aqui você pode gerar suas próprias notificações, se necessário
-            sendNotification(remoteMessage.notification?.body)
+            remoteMessage.notification?.let { sendNotification(it) }
         }
 
-        private fun scheduleJob() {
-            // Implementação de uma tarefa longa usando o WorkManager
-        }
 
-        private fun handleNow() {
-            // Implementação de tarefa curta
-        }
-
-        private fun sendNotification(messageBody: String?) {
+        private fun sendNotification(message : RemoteMessage.Notification) {
             // Código para gerar notificações
+
+
+            var builder = NotificationCompat.Builder(this, "CHANNEL_ID")
+                .setSmallIcon(R.drawable.baseline_message_24)
+                .setContentTitle(message.title)
+                .setContentText(message.body)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+                val channel = NotificationChannel(
+                    "Canal 1",
+                    "Test",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                )
+
+
+                val notificationManager : NotificationManager =
+                    getSystemService(Context.NOTIFICATION_SERVICE) as
+                            NotificationManager
+
+
+
+                notificationManager.createNotificationChannel(channel)
+
+
+
+
+            }
+
+
+
         }
 
         companion object {
