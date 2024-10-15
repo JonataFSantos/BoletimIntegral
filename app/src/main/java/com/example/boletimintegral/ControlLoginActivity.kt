@@ -26,8 +26,7 @@ class ControlLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-
+        
         val navHostFragment = (supportFragmentManager.findFragmentById(
             binding.fragmentContainerView.id
         )
@@ -35,6 +34,8 @@ class ControlLoginActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+
 
         binding.toolbar.setupWithNavController(navController,appBarConfiguration)
 
