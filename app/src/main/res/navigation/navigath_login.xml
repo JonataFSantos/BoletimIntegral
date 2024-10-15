@@ -14,8 +14,9 @@
             android:id="@+id/action_loginFragment_to_cadasterFragment"
             app:destination="@id/cadasterFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_userActivity"
-            app:destination="@id/userActivity" />
+            android:id="@+id/action_loginFragment_to_userScreenFragment"
+            app:destination="@id/LoginIn"
+            />
     </fragment>
     <fragment
         android:id="@+id/cadasterFragment"
@@ -24,19 +25,64 @@
         tools:layout="@layout/fragment_cadaster"
         >
         <action
-            android:id="@+id/action_cadasterFragment_to_userActivity"
-            app:destination="@id/userActivity" />
+            android:id="@+id/action_cadasterFragment_to_LoginIn"
+            app:destination="@id/LoginIn" />
     </fragment>
-    <activity
-        android:id="@+id/userActivity"
-        android:name="com.example.boletimintegral.UserActivity"
-        android:label="activity_user"
-        tools:layout="@layout/activity_user">
-
-
-
-    </activity>
-
+    <navigation android:id="@+id/LoginIn"
+        app:startDestination="@id/userScreenFragment">
+        <fragment
+            android:id="@+id/userScreenFragment"
+            android:name="com.example.boletimintegral.UserScreenFragment"
+            android:label="fragment_user_screen"
+            tools:layout="@layout/fragment_user_screen">
+            <action
+                android:id="@+id/action_userScreenFragment_to_messageFragment"
+                app:destination="@id/messageFragment" />
+            <action
+                android:id="@+id/action_userScreenFragment_to_addChildrenFragment"
+                app:destination="@id/addChildrenFragment" />
+            <action
+                android:id="@+id/action_userScreenFragment_to_accessFragment"
+                app:destination="@id/accessFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/messageFragment"
+            android:name="com.example.boletimintegral.MessageFragment"
+            android:label="MessageFragment"
+            tools:layout="@layout/fragment_message" >
+            <action
+                android:id="@+id/action_messageFragment_to_messagemSendFragment"
+                app:destination="@id/messagemSendFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addChildrenFragment"
+            android:name="com.example.boletimintegral.AddChildrenFragment"
+            android:label="fragment_add_children"
+            tools:layout="@layout/fragment_add_children" />
+        <fragment
+            android:id="@+id/messagemSendFragment"
+            android:name="com.example.boletimintegral.MessagemSendFragment"
+            android:label="MessagemSendFragment"
+            tools:layout="@layout/fragment_messagem_send"/>
+        <fragment
+            android:id="@+id/accessFragment"
+            android:name="com.example.boletimintegral.AccessFragment"
+            android:label="fragment_access"
+            tools:layout="@layout/fragment_access" >
+            <action
+                android:id="@+id/action_accessFragment_to_accessSelectedFragment"
+                app:destination="@id/accessSelectedFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/accessSelectedFragment"
+            android:name="com.example.boletimintegral.AccessSelectedFragment"
+            android:label="fragment_access_selected"
+            tools:layout="@layout/fragment_access_selected" >
+            <argument
+                android:name="user"
+                app:argType="com.example.boletimintegral.model.User" />
+        </fragment>
+    </navigation>
 
 
 </navigation>

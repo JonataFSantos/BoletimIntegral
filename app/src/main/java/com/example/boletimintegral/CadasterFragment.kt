@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.boletimintegral.databinding.FragmentCadasterBinding
@@ -33,6 +34,8 @@ class CadasterFragment : Fragment(R.layout.fragment_cadaster) {
         Firebase.firestore
     }
 
+    val toolbar = (activity as ControlLoginActivity).findViewById<Toolbar>(R.id.toolbar)
+
 
 
     override fun onCreateView(
@@ -48,6 +51,7 @@ class CadasterFragment : Fragment(R.layout.fragment_cadaster) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        toolbar.visibility = View.GONE
 
 
 
@@ -145,7 +149,7 @@ class CadasterFragment : Fragment(R.layout.fragment_cadaster) {
 
         if (createCountSuccess){
             findNavController().navigate(
-                R.id.action_cadasterFragment_to_userActivity
+                R.id.action_loginFragment_to_userScreenFragment
             )
         }
     }
@@ -158,6 +162,15 @@ class CadasterFragment : Fragment(R.layout.fragment_cadaster) {
                 .set(dataUser())
                 .await()
         }
+
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+
+        toolbar.visibility = View.VISIBLE
 
     }
 }

@@ -1,6 +1,7 @@
 package com.example.boletimintegral
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,18 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.boletimintegral.databinding.FragmentLoginBinding
-import com.example.boletimintegral.model.ContactFirebase
-import com.example.boletimintegral.model.User
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.auth
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
@@ -37,6 +36,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         Firebase.auth
     }
 
+    val toolbar = (activity as ControlLoginActivity).findViewById<Toolbar>(R.id.toolbar)
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,12 +55,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         goToUserScreen()
 
     }
 
     override fun onResume() {
         super.onResume()
+
 
 
         binding.btnToEnter.setOnClickListener {
@@ -89,7 +93,19 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         Log.i("appFlow", "Login of user is $userIsNotNull")
 
         if (userIsNotNull) {
-            findNavController().navigate(R.id.action_loginFragment_to_userActivity)
+
+            findNavController().navigate(
+                R.id.action_loginFragment_to_userScreenFragment,
+                navOptions = navOptions {
+                    popUpTo(R.id.loginFragment){
+                        inclusive = true
+                    }
+                }
+            )
+
+
+
+
         }
     }
 
@@ -117,7 +133,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 .await()
 
             if (loginInSuccess){
-                findNavController().navigate(R.id.action_loginFragment_to_userActivity)
+
+                findNavController().navigate(
+                    R.id.action_loginFragment_to_userScreenFragment,
+                    null,
+                    navOptions = navOptions {
+                        popUpTo(R.id.navigath_login){
+                            inclusive = true
+                        }
+                    }
+                )
             }
         }
 
@@ -132,6 +157,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         } else {
             true
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+
+        toolbar.visibility = View.VISIBLE
+
     }
 
 }

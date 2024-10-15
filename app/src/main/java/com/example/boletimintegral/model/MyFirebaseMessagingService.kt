@@ -3,6 +3,7 @@ package com.example.boletimintegral.model
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.media.RingtoneManager
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
@@ -48,11 +49,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService( ){
                 getSystemService(Context.NOTIFICATION_SERVICE) as
                         NotificationManager
 
+            val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+
             val builder = NotificationCompat.Builder(this, "CHANNEL_ID")
                 .setSmallIcon(R.drawable.baseline_message_24)
                 .setContentTitle(message.title)
                 .setContentText(message.body)
+                .setSound(defaultSoundUri)
+                .setVibrate(longArrayOf(0, 500, 1000))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
+
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 

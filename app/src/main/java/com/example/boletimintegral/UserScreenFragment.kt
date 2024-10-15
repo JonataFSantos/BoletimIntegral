@@ -1,30 +1,18 @@
 package com.example.boletimintegral
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.provider.MediaStore.Audio.Radio
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
-import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.boletimintegral.databinding.FragmentUserScreenBinding
 import com.example.boletimintegral.model.ContactFirebase
 import com.example.boletimintegral.model.DataStudent
-import com.example.boletimintegral.model.User
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
-import com.google.firebase.firestore.firestore
-import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 
 
@@ -50,6 +38,9 @@ class UserScreenFragment : Fragment(R.layout.fragment_user_screen) {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+
+        val toolbar = (activity as ControlLoginActivity).findViewById<Toolbar>(R.id.toolbar)
 
         
         CoroutineScope(Dispatchers.Main).launch {

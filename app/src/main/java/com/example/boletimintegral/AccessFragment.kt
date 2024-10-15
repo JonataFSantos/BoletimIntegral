@@ -87,9 +87,9 @@ class AccessFragment : Fragment() {
 
             val action =
                 AccessFragmentDirections
-                    .actionAccessFragmentToAccessSelectedFragment3(
-                    user
-                )
+                    .actionAccessFragmentToAccessSelectedFragment(
+                        user
+                    )
 
             findNavController().navigate(action)
         }

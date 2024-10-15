@@ -48,6 +48,9 @@ class UserActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
 
+
+
+
       Firebase.installations.getToken(true)
 
 
@@ -131,9 +134,9 @@ class UserActivity : AppCompatActivity() {
                 }
 
 
-                navController.navigate(R.id.action_userScreenFragment_to_navigath_login)
-
-                finish()
+//                navController.navigate(R.id.action_userScreenFragment_to_navigath_login)
+//
+//                finish()
 
                 true
             }
